@@ -9,6 +9,7 @@ before_install:
 
 script:
     - docker run -e CI=true asethi06/basic-react-app npm run test -- --coverage
+    - docker run -e CI=true asethi06/basic-react-app npm run build -- --coverage
 
 deploy:
     provider: heroku
