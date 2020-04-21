@@ -9,3 +9,12 @@ before_install:
 
 script:
     - docker run -e CI=true asethi06/basic-react-app npm run test -- --coverage
+
+deploy:
+    # deploy app as front end website
+    - provider: heroku
+        skip_cleanup: true
+        api-key:
+            secure: $HEROKU_API_KEY
+        app: code-editor-react
+       
